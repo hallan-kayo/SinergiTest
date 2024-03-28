@@ -3,14 +3,13 @@ package com.sinerji.test.bd;
 import java.time.LocalDate;
 
 import com.sinerji.test.entities.Manager;
-import com.sinerji.test.entities.Person;
 import com.sinerji.test.entities.Sales;
 import com.sinerji.test.entities.Secretary;
 import com.sinerji.test.entities.Seller;
 
 public class DataBase {
 
-	public void fillDataBase() {
+	public static void fillDataBase() {
 		Secretary sec1 = new Secretary("Jorge Carvalho", 7000.0, 0.2, LocalDate.of(2018,01, 01));
 		Secretary sec2 = new Secretary("Maria Souza", 7000.0, 0.2, LocalDate.of(2015,12, 01));
 		

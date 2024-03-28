@@ -4,23 +4,26 @@ import java.time.LocalDate;
 
 public class Secretary extends Person{
 	
-	private Double salary;
+	private Double baseSalary;
 
 	public Secretary() {
+		this.setWorkReward(1000.0);
 	}
 
-	public Secretary(String name, Double salary, Double benefit, LocalDate hiringDate) {
-		super(name, salary, benefit, hiringDate);
-		this.salary = salary;
+	public Secretary(String name, Double baseSalary, Double benefit, LocalDate hiringDate) {
+		super(name, baseSalary, benefit, hiringDate);
+		this.baseSalary = baseSalary;
+		this.setWorkReward(1000.0);
 	}
 	
-	public Double salaryWithBenefits() {
-		return (this.getSalary()+(this.getSalary()*this.getBenefit()));
+	public Double salaryWithBenefits(int year) {
+		return this.getSalaryInYear(year) + (this.getSalaryInYear(year)*this.getBenefit());
 	}
+	
 
 	@Override
 	public String toString() {
-		return "Name=" + getName() +", Salary=" + salary + ", Benefit=" + getBenefit()
+		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
 				+ ", HiringDate=" + getHiringDate();
 	}
 

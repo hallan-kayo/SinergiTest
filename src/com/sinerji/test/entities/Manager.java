@@ -4,18 +4,22 @@ import java.time.LocalDate;
 
 public class Manager extends Person{
 
-	private Double salary;
-
+	private Double baseSalary;
 	
-	public Manager(String name, Double salary, LocalDate hiringDate) {
-		super(name, salary, 0.0, hiringDate);
-		this.salary = salary;
+	public Manager() {
+		this.setWorkReward(3000.0);
+	}
+
+	public Manager(String name, Double baseSalary, LocalDate hiringDate) {
+		super(name, baseSalary, 0.0, hiringDate);
+		this.baseSalary = baseSalary;
+		this.setWorkReward(3000.0);
 	}
 
 
 	@Override
 	public String toString() {
-		return "Name=" + getName() +", Salary=" + salary + ", Benefit=" + getBenefit()
+		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
 				+ ", HiringDate=" + getHiringDate();
 	}
 

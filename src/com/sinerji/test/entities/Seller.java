@@ -6,26 +6,26 @@ import java.util.List;
 
 public class Seller extends Person{
 
-	private Double salary;
+	private Double baseSalary;
 	private List<Sales> sales;
 	
-	public Seller(String name, Double salary, Double benefit, LocalDate hiringDate) {
-		super(name, salary, benefit, hiringDate);
-		this.salary = salary;
+	public Seller(String name, Double baseSalary, Double benefit, LocalDate hiringDate) {
+		super(name, baseSalary, benefit, hiringDate);
+		this.baseSalary = baseSalary;
+		this.setWorkReward(1800.0);
 		sales = new ArrayList<>();
 	}
 
-	public Seller(Double salary) {
+	public Seller(Double baseSalary) {
 		super();
-		this.salary = salary;
+		this.baseSalary = baseSalary;
+		this.setWorkReward(1800.0);
+		sales = new ArrayList<>();
 	}
 
 	public Seller() {
-		super();
-	}
-
-	public void setSalary(Double salary) {
-		this.salary = salary;
+		this.setWorkReward(1800.0);
+		sales = new ArrayList<>();
 	}
 
 	public List getSales() {
@@ -34,7 +34,7 @@ public class Seller extends Person{
 	
 	@Override
 	public String toString() {
-		return "Name=" + getName() +", Salary=" + salary + ", Benefit=" + getBenefit()
+		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
 				+ ", HiringDate=" + getHiringDate();
 	}
 	
@@ -42,12 +42,12 @@ public class Seller extends Person{
 		this.sales.add(sale);
 	}
 	
-	public Double salaryWithBenefits() {
-		return this.salary + this.calculateBenefits();
+	public Double baseSalaryWithBenefits() {
+		return this.baseSalary + this.calculateBenefits();
 	}
 	
 	private Double calculateBenefits() {
-		return this.getSalary() + (this.getBenefit()*this.getQuantitySales()*this.getSalary());
+		return this.getBaseSalary() + (this.getBenefit()*this.getQuantitySales()*this.getBaseSalary());
 	}
 	
 	private Integer getQuantitySales() {
