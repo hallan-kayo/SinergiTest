@@ -42,12 +42,18 @@ public class Seller extends Person{
 		this.sales.add(sale);
 	}
 	
-	public Double baseSalaryWithBenefits() {
-		return this.baseSalary + this.calculateBenefits();
+	public Double baseSalaryWithBenefits(LocalDate date) {
+		return this.getSalaryInYear(date.getYear()) + this.calculateMonthlyBenefits(date);
 	}
 	
-	private Double calculateBenefits() {
-		return this.getBaseSalary() + (this.getBenefit()*this.getQuantitySales()*this.getBaseSalary());
+	private Double calculateMonthlyBenefits(LocalDate date) {
+		Double benefits = 0.0;
+		for(Sales sale: sales) {
+			if(sale.getDate().equals(date))
+				benefits += sale.getValue()*this.getBenefit();
+			
+		}
+		return benefits;
 	}
 	
 	private Integer getQuantitySales() {

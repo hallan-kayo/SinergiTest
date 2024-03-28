@@ -53,5 +53,13 @@ public class Sales {
 	public void setSeller(Seller seller) {
 		this.seller = seller;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Sales [value=" + value + ", date=" + date + ", seller=" + seller + "]";
+	}
+	
+	
 	
 }

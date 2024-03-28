@@ -34,10 +34,15 @@ public class Main {
 		man2.setWorkReward(3000.0);
 
 		Sales sale1 = new Sales(5200.0, LocalDate.of(2021, 12, 01));
+		sale1.setSeller(ana);
 		Sales sale2 = new Sales(4000.0, LocalDate.of(2022, 01, 01));
+		sale1.setSeller(ana);
 		Sales sale3 = new Sales(4200.0, LocalDate.of(2022, 02, 01));
+		sale1.setSeller(ana);
 		Sales sale4 = new Sales(5850.0, LocalDate.of(2022, 03, 01));
+		sale1.setSeller(ana);
 		Sales sale5 = new Sales(7000.0, LocalDate.of(2022, 04, 01));
+		sale1.setSeller(ana);
 		ana.addSale(sale1);
 		ana.addSale(sale2);
 		ana.addSale(sale3);
@@ -45,10 +50,15 @@ public class Main {
 		ana.addSale(sale5);
 
 		Sales sale6 = new Sales(3400.0, LocalDate.of(2021, 12, 01));
+		sale1.setSeller(joao);
 		Sales sale7 = new Sales(7700.0, LocalDate.of(2022, 01, 01));
+		sale1.setSeller(joao);
 		Sales sale8 = new Sales(5000.0, LocalDate.of(2022, 02, 01));
+		sale1.setSeller(joao);
 		Sales sale9 = new Sales(5900.0, LocalDate.of(2022, 03, 01));
+		sale1.setSeller(joao);
 		Sales sale10 = new Sales(6500.0, LocalDate.of(2022, 04, 01));
+		sale1.setSeller(joao);
 		joao.addSale(sale1);
 		joao.addSale(sale2);
 		joao.addSale(sale3);
@@ -69,6 +79,16 @@ public class Main {
 
 		System.out.println("Salary in especific Year: " + man1.getSalaryInYear(2021));
 
+		
+		System.out.println("------------------------------------------------------------------\n\n");
+		
+		System.out.println("Seller ---------------------------------");
+
+		System.out.println("Base Salary: " + ana.getBaseSalary());
+
+		System.out.println("Salary in especific Year: " + ana.getSalaryInYear(2022));
+		
+		System.out.println(ana.baseSalaryWithBenefits(LocalDate.of(2022, 03, 01)));
 	}
 
 }
