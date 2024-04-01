@@ -2,7 +2,9 @@ package com.sinerji.test.entities;
 
 import java.time.LocalDate;
 
-public class Secretary extends Person{
+import com.sinerji.test.entities.interfaces.EmployeeWithBenefits;
+
+public class Secretary extends Person implements EmployeeWithBenefits{
 	
 	private Double baseSalary;
 
@@ -16,8 +18,9 @@ public class Secretary extends Person{
 		this.setWorkReward(1000.0);
 	}
 	
-	public Double salaryWithBenefits(int year) {
-		return this.getSalaryInYear(year) + (this.getSalaryInYear(year)*this.getBenefit());
+	@Override
+	public Double baseSalaryWithBenefits(LocalDate date) {
+		return this.getSalaryInYear(date.getYear()) + (this.getSalaryInYear(date.getYear())*this.getBenefit());
 	}
 	
 

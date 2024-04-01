@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Seller extends Person{
+import com.sinerji.test.entities.interfaces.EmployeeWithBenefits;
+
+public class Seller extends Person implements EmployeeWithBenefits{
 
 	private Double baseSalary;
 	private List<Sales> sales;
@@ -32,16 +34,11 @@ public class Seller extends Person{
 		return sales;
 	}
 	
-	@Override
-	public String toString() {
-		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
-				+ ", HiringDate=" + getHiringDate();
-	}
-	
 	public void addSale(Sales sale) {
 		this.sales.add(sale);
 	}
 	
+	@Override
 	public Double baseSalaryWithBenefits(LocalDate date) {
 		return this.getSalaryInYear(date.getYear()) + this.calculateMonthlyBenefits(date);
 	}
@@ -51,8 +48,8 @@ public class Seller extends Person{
 		for(Sales sale: sales) {
 			if(sale.getDate().equals(date))
 				benefits += sale.getValue()*this.getBenefit();
-			
-		}
+				
+			}
 		return benefits;
 	}
 	
@@ -60,4 +57,9 @@ public class Seller extends Person{
 		return this.sales.size();
 	}
 	
+	@Override
+	public String toString() {
+		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
+				+ ", HiringDate=" + getHiringDate();
+	}
 }

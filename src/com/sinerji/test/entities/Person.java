@@ -76,12 +76,14 @@ public class Person {
 		return this.baseSalary + (this.getWorkReward()*yearsWorked(year));
 	}
 
+	public Double baseSalaryWithBenefits(LocalDate date) {
+		return this.getBaseSalary();
+	}
+
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", salary=" + baseSalary + ", benefit=" + benefit + ", hiringDate=" + hiringDate
 				+ "]";
 	}
-	
-	
 	
 }
