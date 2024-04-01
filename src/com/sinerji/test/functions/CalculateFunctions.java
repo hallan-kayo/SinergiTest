@@ -48,4 +48,17 @@ public class CalculateFunctions {
         return highestSalaryEmployee;
     }
 
+    //returns the name of the employee who received the highest amount high in benefits per month.
+    public Double higestBenefitInMonthEmployee(List<EmployeeWithBenefits> employees, int year, int month){
+        Double highestBenefit = Double.MIN_VALUE;
+        Double employeeName = 0.0;
+        for(EmployeeWithBenefits employee: employees){
+            if(employee.getTotalBenefits(LocalDate.of(year, month, 01)) > highestBenefit){
+                highestBenefit = employee.getTotalBenefits(LocalDate.of(year, month, 01));
+                employeeName = employee.getTotalBenefits(LocalDate.of(year, month, 01));
+            }
+        }
+        return employeeName;
+    }
+
 }

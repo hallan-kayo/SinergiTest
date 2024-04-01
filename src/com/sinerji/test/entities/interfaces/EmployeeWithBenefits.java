@@ -10,4 +10,6 @@ public interface EmployeeWithBenefits {
     public Double baseSalaryWithBenefits(LocalDate date);
 
     public Double getTotalBenefits(LocalDate date);
+
+    public String getName();
 }

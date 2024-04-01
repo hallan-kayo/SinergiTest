@@ -141,6 +141,10 @@ public class Main {
 		System.out.println("employee with highest salary  ---------------------------------");
 
 		System.out.println(calculate.higestAmountInMonth(employees, 2022, 03));
+
+		System.out.println("employee with highest benefit  ---------------------------------");
+
+		System.out.println(calculate.higestBenefitInMonthEmployee(employeesWithBenefits, 2022, 03));
 	}
 
 }
