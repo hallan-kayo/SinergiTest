@@ -9,6 +9,7 @@ import com.sinerji.test.entities.Manager;
 import com.sinerji.test.entities.Sales;
 import com.sinerji.test.entities.Secretary;
 import com.sinerji.test.entities.Seller;
+import com.sinerji.test.entities.interfaces.EmployeeWithBenefits;
 import com.sinerji.test.entities.Person;
 import com.sinerji.test.functions.CalculateFunctions;
 
@@ -77,32 +78,48 @@ public class Main {
 		employees.add(man1);
 		employees.add(man2);
 
+		List<EmployeeWithBenefits> employeesWithBenefits = new ArrayList<>();
+		employeesWithBenefits.add(sec1);
+		employeesWithBenefits.add(sec2);
+		employeesWithBenefits.add(ana);
+		employeesWithBenefits.add(joao);
+
 		System.out.println(employees);
 
 		System.out.println("Secretary --------------------------------");
 
 		System.out.println("Base Salary: " + sec1.getBaseSalary());
 
-		System.out.println("Salary in especific Year:" + sec1.getSalaryInYear(2021));
+		System.out.println(sec1.getTotalBenefits(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Salary with benefits: " + sec1.baseSalaryWithBenefits(LocalDate.of(2021,02,01)));
+		System.out.println(sec1.yearsWorked(LocalDate.of(2022, 03, 01)));
+
+		System.out.println(sec1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+
+		System.out.println("Salary in especific Year:" + sec1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+
+		System.out.println("Salary with benefits: " + sec1.baseSalaryWithBenefits(LocalDate.of(2022,03,01)));
 
 		System.out.println("Manager ---------------------------------");
 
 		System.out.println("Base Salary: " + man1.getBaseSalary());
 
-		System.out.println("Salary in especific Year: " + man1.getSalaryInYear(2021));
+		System.out.println("Salary in especific Year: " + man1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
 
 		
 		System.out.println("------------------------------------------------------------------\n\n");
 		
 		System.out.println("Seller ---------------------------------");
+		System.out.println(ana.yearsWorked(LocalDate.of(2022, 03, 01)));
 
 		System.out.println("Base Salary: " + ana.getBaseSalary());
+		System.out.println("Benefits in month: " + ana.calculateMonthlyBenefits(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Salary in especific Year: " + ana.getSalaryInYear(2023));
+		System.out.println("Total Benefits " +ana.getTotalBenefits(LocalDate.of(2022, 03, 01)));
+
+		System.out.println("Salary in especific Year: " + ana.getSalaryInDate(LocalDate.of(2022, 03, 01)));
 		
-		System.out.println(ana.baseSalaryWithBenefits(LocalDate.of(2022, 06, 01)));
+		System.out.println( "Salary with benefits: " + ana.baseSalaryWithBenefits(LocalDate.of(2022, 03, 01)));
 
 		System.out.println("------------------------------------------------------------------\n\n");
 
@@ -112,7 +129,13 @@ public class Main {
 
 		System.out.println("total: " + calculate.totalSalaryOnDate(employees, 2022, 03));
 
-		
+		System.out.println("Base salary in date ---------------------------------");
+
+		System.out.println("base Salary: " + calculate.baseSalaryOnDate(employees, 2022, 03));
+
+		System.out.println("Total Benefits in date ---------------------------------");
+
+		System.out.println("total Benefits: " + calculate.TotalBenefitsOnDate(employeesWithBenefits, 2022, 03));
 	}
 
 }

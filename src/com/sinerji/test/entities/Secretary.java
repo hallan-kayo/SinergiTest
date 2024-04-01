@@ -20,7 +20,12 @@ public class Secretary extends Person implements EmployeeWithBenefits{
 	
 	@Override
 	public Double baseSalaryWithBenefits(LocalDate date) {
-		return this.getSalaryInYear(date.getYear()) + (this.getSalaryInYear(date.getYear())*this.getBenefit());
+		return this.getSalaryInDate(date) + (this.getSalaryInDate(date)*this.getBenefit());
+	}
+
+	@Override
+	public Double getTotalBenefits(LocalDate date){
+		return this.getSalaryInDate(date)*this.getBenefit();
 	}
 	
 

@@ -8,4 +8,6 @@ import java.time.LocalDate;
 public interface EmployeeWithBenefits {
 
     public Double baseSalaryWithBenefits(LocalDate date);
+
+    public Double getTotalBenefits(LocalDate date);
 }

@@ -4,6 +4,7 @@
 package com.sinerji.test.entities;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  * 
@@ -68,12 +69,13 @@ public class Person {
 		this.workReward = workReward;
 	}
 
-	protected Integer yearsWorked(int year) {
-		return year - this.hiringDate.getYear();
+	public Integer yearsWorked(LocalDate date) {
+		Period periodo = Period.between(this.getHiringDate(),date);
+		return periodo.getYears();
 	}
 	
-	public Double getSalaryInYear(int year) {
-		return this.baseSalary + (this.getWorkReward()*yearsWorked(year));
+	public Double getSalaryInDate(LocalDate date) {
+		return this.getBaseSalary() + (this.getWorkReward()*yearsWorked(date));
 	}
 
 	public Double baseSalaryWithBenefits(LocalDate date) {

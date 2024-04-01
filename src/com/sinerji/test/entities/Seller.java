@@ -40,10 +40,11 @@ public class Seller extends Person implements EmployeeWithBenefits{
 	
 	@Override
 	public Double baseSalaryWithBenefits(LocalDate date) {
-		return this.getSalaryInYear(date.getYear()) + this.calculateMonthlyBenefits(date);
+		return this.getSalaryInDate(date) + this.calculateMonthlyBenefits(date) +
+		 (this.getSalaryInDate(date)*this.getBenefit());
 	}
 	
-	private Double calculateMonthlyBenefits(LocalDate date) {
+	public Double calculateMonthlyBenefits(LocalDate date) {
 		Double benefits = 0.0;
 		for(Sales sale: sales) {
 			if(sale.getDate().equals(date))
@@ -52,9 +53,10 @@ public class Seller extends Person implements EmployeeWithBenefits{
 			}
 		return benefits;
 	}
-	
-	private Integer getQuantitySales() {
-		return this.sales.size();
+
+	@Override
+	public Double getTotalBenefits(LocalDate date){
+		return this.calculateMonthlyBenefits(date) + (this.getSalaryInDate(date)-this.getBaseSalary());
 	}
 	
 	@Override
@@ -62,4 +64,5 @@ public class Seller extends Person implements EmployeeWithBenefits{
 		return "Name=" + getName() +", Salary=" + baseSalary + ", Benefit=" + getBenefit()
 				+ ", HiringDate=" + getHiringDate();
 	}
+
 }
