@@ -6,11 +6,11 @@ import java.util.List;
 
 import com.sinerji.test.bd.DataBase;
 import com.sinerji.test.entities.Manager;
+import com.sinerji.test.entities.Person;
 import com.sinerji.test.entities.Sales;
 import com.sinerji.test.entities.Secretary;
 import com.sinerji.test.entities.Seller;
 import com.sinerji.test.entities.interfaces.EmployeeWithBenefits;
-import com.sinerji.test.entities.Person;
 import com.sinerji.test.functions.CalculateFunctions;
 
 public class Main {
@@ -64,11 +64,11 @@ public class Main {
 		sale1.setSeller(joao);
 		Sales sale10 = new Sales(6500.0, LocalDate.of(2022, 04, 01));
 		sale1.setSeller(joao);
-		joao.addSale(sale1);
-		joao.addSale(sale2);
-		joao.addSale(sale3);
-		joao.addSale(sale4);
-		joao.addSale(sale5);
+		joao.addSale(sale6);
+		joao.addSale(sale7);
+		joao.addSale(sale8);
+		joao.addSale(sale9);
+		joao.addSale(sale10);
 
 		List<Person> employees = new ArrayList();
 		employees.add(sec1);
@@ -145,6 +145,14 @@ public class Main {
 		System.out.println("employee with highest benefit  ---------------------------------");
 
 		System.out.println(calculate.higestBenefitInMonthEmployee(employeesWithBenefits, 2022, 03));
+
+		List<Seller> sellers = new ArrayList();
+		sellers.add(ana);
+		sellers.add(joao);
+
+		System.out.println("best seller in date  ---------------------------------");
+
+		System.out.println(calculate.highestSoldInMonth(sellers, 2022, 3));
 	}
 
 }

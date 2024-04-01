@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.sinerji.test.entities.Person;
+import com.sinerji.test.entities.Sales;
+import com.sinerji.test.entities.Seller;
 import com.sinerji.test.entities.interfaces.EmployeeWithBenefits;
 
 public class CalculateFunctions {
@@ -59,6 +61,24 @@ public class CalculateFunctions {
             }
         }
         return employeeName;
+    }
+
+    //return what else sold in the month.
+    public Seller highestSoldInMonth(List<Seller> sellers, int year, int month){
+        Seller bestSeller = null;
+        Double highestSold = 0.0;
+        for(Seller seller: sellers){
+            for(Sales sale:seller.getSales()){
+                if(sale.getDate().equals(LocalDate.of(year, month, 01))){
+                    System.out.println(sale);
+                    if(sale.getValue() > highestSold){
+                        highestSold = sale.getValue();
+                        bestSeller = seller;
+                    }
+                }
+            }
+        }
+        return bestSeller;
     }
 
 }

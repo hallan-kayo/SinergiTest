@@ -30,7 +30,7 @@ public class Seller extends Person implements EmployeeWithBenefits{
 		sales = new ArrayList<>();
 	}
 
-	public List getSales() {
+	public List<Sales> getSales() {
 		return sales;
 	}
 	
