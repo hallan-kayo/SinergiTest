@@ -40,8 +40,7 @@ public class Seller extends Person implements EmployeeWithBenefits{
 	
 	@Override
 	public Double baseSalaryWithBenefits(LocalDate date) {
-		return this.getSalaryInDate(date) + this.calculateMonthlyBenefits(date) +
-		 (this.getSalaryInDate(date)*this.getBenefit());
+		return this.getSalaryInDate(date) + this.calculateMonthlyBenefits(date);
 	}
 	
 	public Double calculateMonthlyBenefits(LocalDate date) {

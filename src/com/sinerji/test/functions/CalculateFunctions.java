@@ -21,11 +21,11 @@ public class CalculateFunctions {
 
     //returns the base salary value paid to these employees in the month
     public Double baseSalaryOnDate(List<Person> employees, int year, int month){
-        Double totalSalary = 0.0;
+        Double totalBaseSalary = 0.0;
         for(Person employee: employees){
-            totalSalary += employee.getSalaryInDate(LocalDate.of(year, month, 01));
+            totalBaseSalary += employee.getSalaryInDate(LocalDate.of(year, month, 01));
         }
-        return totalSalary;
+        return totalBaseSalary;
     }
 
     //returns the total paid in benefits in the month. list only employees who receive benefits.

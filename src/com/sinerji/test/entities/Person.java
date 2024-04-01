@@ -79,7 +79,7 @@ public class Person {
 	}
 
 	public Double baseSalaryWithBenefits(LocalDate date) {
-		return this.getBaseSalary();
+		return this.getSalaryInDate(date);
 	}
 
 	@Override

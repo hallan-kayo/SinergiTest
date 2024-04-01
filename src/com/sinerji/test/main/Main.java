@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sinerji.test.bd.DataBase;
 import com.sinerji.test.entities.Manager;
 import com.sinerji.test.entities.Person;
 import com.sinerji.test.entities.Sales;
@@ -17,11 +16,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		DataBase.fillDataBase();
-
-		int current = LocalDate.now().getYear();
-		System.out.println(current);
 
 		Secretary sec1 = new Secretary("Jorge Carvalho", 7000.0, 0.2, LocalDate.of(2018, 01, 01));
 		sec1.setWorkReward(1000.0);
@@ -84,42 +78,42 @@ public class Main {
 		employeesWithBenefits.add(ana);
 		employeesWithBenefits.add(joao);
 
-		System.out.println(employees);
 
-		System.out.println("Secretary --------------------------------");
+		// System.out.println("Secretary --------------------------------");
 
-		System.out.println("Base Salary: " + sec1.getBaseSalary());
+		// System.out.println("Base Salary: " + sec2.getBaseSalary());
 
-		System.out.println(sec1.getTotalBenefits(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Total Benefits:" +sec2.getTotalBenefits(LocalDate.of(2022, 03, 01)));
 
-		System.out.println(sec1.yearsWorked(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Years worked: " +sec2.yearsWorked(LocalDate.of(2022, 03, 01)));
 
-		System.out.println(sec1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Salary in especific Year:" + sec2.getSalaryInDate(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Salary in especific Year:" + sec1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Salary with benefits: " + sec2.baseSalaryWithBenefits(LocalDate.of(2022,03,01)));
 
-		System.out.println("Salary with benefits: " + sec1.baseSalaryWithBenefits(LocalDate.of(2022,03,01)));
+		// System.out.println("\nManager ---------------------------------");
 
-		System.out.println("Manager ---------------------------------");
+		// System.out.println("Base Salary: " + man2.getBaseSalary());
+		// System.out.println("years worked: " +man2.yearsWorked(LocalDate.of(2022,03,01)));
 
-		System.out.println("Base Salary: " + man1.getBaseSalary());
-
-		System.out.println("Salary in especific Year: " + man1.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Salary in especific Year: " + man2.getSalaryInDate(LocalDate.of(2022, 03, 01)));
 
 		
-		System.out.println("------------------------------------------------------------------\n\n");
+		// System.out.println("------------------------------------------------------------------\n\n");
 		
-		System.out.println("Seller ---------------------------------");
-		System.out.println(ana.yearsWorked(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Seller ---------------------------------");
+		// System.out.println("years worked:" +ana.yearsWorked(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Base Salary: " + ana.getBaseSalary());
-		System.out.println("Benefits in month: " + ana.calculateMonthlyBenefits(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Base Salary: " + ana.getBaseSalary());
+		// System.out.println("Benefits in month: " + ana.calculateMonthlyBenefits(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Total Benefits " +ana.getTotalBenefits(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Total Benefits " +ana.getTotalBenefits(LocalDate.of(2022, 03, 01)));
 
-		System.out.println("Salary in especific Year: " + ana.getSalaryInDate(LocalDate.of(2022, 03, 01)));
+		// System.out.println("Salary in especific Year: " + ana.getSalaryInDate(LocalDate.of(2022, 03, 01)));
 		
-		System.out.println( "Salary with benefits: " + ana.baseSalaryWithBenefits(LocalDate.of(2022, 03, 01)));
+		// System.out.println( "Salary with benefits: " + ana.baseSalaryWithBenefits(LocalDate.of(2022, 03, 01)));
+
+
 
 		System.out.println("------------------------------------------------------------------\n\n");
 
