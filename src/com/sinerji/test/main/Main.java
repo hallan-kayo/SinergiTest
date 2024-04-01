@@ -136,6 +136,11 @@ public class Main {
 		System.out.println("Total Benefits in date ---------------------------------");
 
 		System.out.println("total Benefits: " + calculate.TotalBenefitsOnDate(employeesWithBenefits, 2022, 03));
+
+
+		System.out.println("employee with highest salary  ---------------------------------");
+
+		System.out.println(calculate.higestAmountInMonth(employees, 2022, 03));
 	}
 
 }
