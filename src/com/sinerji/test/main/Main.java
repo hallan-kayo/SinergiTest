@@ -119,24 +119,30 @@ public class Main {
 
 		CalculateFunctions calculate = new CalculateFunctions();
 		
-		System.out.println("Total salary in date ---------------------------------");
+		System.out.println("Um método que receba uma lista de funcionários, mês e ano e retorne o valor total\r\n" + //
+						"pago (salário e benefício) a esses funcionários no mês.");
 
 		System.out.println("total: " + calculate.totalSalaryOnDate(employees, 2022, 03));
 
-		System.out.println("Base salary in date ---------------------------------");
+		System.out.println("\n\nUm método que receba uma lista de funcionários, mês e ano e retorne o total pago\r\n" + //
+						"somente em salários no mês.");
 
 		System.out.println("base Salary: " + calculate.baseSalaryOnDate(employees, 2022, 03));
 
-		System.out.println("Total Benefits in date ---------------------------------");
+		System.out.println("\n\nUm método que receba uma lista somente com os funcionários que recebem\r\n" + //
+						"benefícios, mês e ano e retorne o total pago em benefícios no mês.");
 
 		System.out.println("total Benefits: " + calculate.TotalBenefitsOnDate(employeesWithBenefits, 2022, 03));
 
 
-		System.out.println("employee with highest salary  ---------------------------------");
+		System.out.println("\n\nUm método que receba uma lista de funcionários, mês e ano e retorne o que\r\n" + //
+						"recebeu o valor mais alto no mês.");
 
 		System.out.println(calculate.higestAmountInMonth(employees, 2022, 03));
 
-		System.out.println("employee with highest benefit  ---------------------------------");
+		System.out.println("\n\nUm método que receba uma lista somente com os funcionários que recebem\r\n" + //
+						"benefícios, mês e ano e retorne o nome do funcionário que recebeu o valor mais\r\n" + //
+						"alto em benefícios no mês.");
 
 		System.out.println(calculate.higestBenefitInMonthEmployee(employeesWithBenefits, 2022, 03));
 
@@ -144,7 +150,8 @@ public class Main {
 		sellers.add(ana);
 		sellers.add(joao);
 
-		System.out.println("best seller in date  ---------------------------------");
+		System.out.println("\n\nUm método que receba uma lista de vendedores, mês e ano e retorne o que mais\r\n" + //
+						"vendeu no mês.");
 
 		System.out.println(calculate.highestSoldInMonth(sellers, 2022, 3));
 	}

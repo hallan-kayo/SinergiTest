@@ -70,7 +70,6 @@ public class CalculateFunctions {
         for(Seller seller: sellers){
             for(Sales sale:seller.getSales()){
                 if(sale.getDate().equals(LocalDate.of(year, month, 01))){
-                    System.out.println(sale);
                     if(sale.getValue() > highestSold){
                         highestSold = sale.getValue();
                         bestSeller = seller;
